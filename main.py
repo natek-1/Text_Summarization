@@ -8,7 +8,7 @@ from textSummarizer.logging import logger
 STAGE_NAME = "Data Ingestion stage"
 
 try:
-    """ logger.info(f"\n\n{'>'*10} {STAGE_NAME}  started {'<'*10}")
+    logger.info(f"\n\n{'>'*10} {STAGE_NAME}  started {'<'*10}")
     data_ingestion = DataIngestionTrainingPipeline()
     data_ingestion.main()
     logger.info(f"{'>'*10} {STAGE_NAME} completed {'<'*10} \n\n x{'='*20}x \n\n")
@@ -24,9 +24,9 @@ try:
     logger.info(f"{'>'*10} {STAGE_NAME} completed {'<'*10} \n\n x{'='*20}x")
     STAGE_NAME = 'Model Training  stage'
     logger.info(f"\n\n {'>'*10} {STAGE_NAME}  started {'<'*10}")
-    model_trainer= ModelTrainer()
+    model_trainer= ModelTrainingPipeline()
     model_trainer.main()
-    logger.info(f"{'>'*10} {STAGE_NAME} completed {'<'*10} \n\n x{'='*20}x") """
+    logger.info(f"{'>'*10} {STAGE_NAME} completed {'<'*10} \n\n x{'='*20}x")
     STAGE_NAME = 'Model Evaluation  stage'
     logger.info(f"\n\n {'>'*10} {STAGE_NAME}  started {'<'*10}")
     model_eval= ModelEvaluationTrainingPipeline()
