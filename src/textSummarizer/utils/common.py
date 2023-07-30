@@ -56,7 +56,7 @@ def get_size(path: Path) -> str:
     
     '''
     try:
-        size_in_kb = round(os.path.get_size(path)/1024)
+        size_in_kb = round(os.path.getsize(path)/1024)
         return f" ~ {size_in_kb} KB"
     except Exception as e:
         raise e
