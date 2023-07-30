@@ -8,10 +8,6 @@ on:
     paths-ignore:
       - 'README.md'
 
-runs:
-  using: 'node16'
-  main: 'main.js'
-
 permissions:
   id-token: write
   contents: read
