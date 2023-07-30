@@ -1,11 +1,16 @@
 name: workflow
 
+
 on:
   push:
     branches:
       - main
     paths-ignore:
       - 'README.md'
+
+runs:
+  using: 'node16'
+  main: 'main.js'
 
 permissions:
   id-token: write
@@ -60,7 +65,7 @@ jobs:
           # be deployed to ECS.
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-          echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+          echo "name=image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_STATE
           
           
   Continuous-Deployment:
